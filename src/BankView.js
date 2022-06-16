@@ -9,14 +9,20 @@ class BankView {
     account.makeDeposit(initialDeposit);
     return account;
   }
+
   viewAccount(accountName) {
     return bank.getAccount(accountName);
   }
+
   viewAccountStatement(accountName) {
     this.viewAccount(accountName);
     const statement = new Statement();
     statement.printStatement();
   }
+
+  closeAccount(accountName) {
+    accountName;
+  }
 }
-// console.log(new Date().toLocaleString());
+console.log(new Date().toLocaleDateString());
 module.exports = BankView;

@@ -2,8 +2,9 @@
 class BankView
 METHODS:
   - openAccount(accountName, initialDeposit) => createAccount() -- makeDeposit()
-  - viewAccount(accountName) => get account()
+  - viewAccount(accountName) => getAccount()
   - viewAccountStatement(accountName) => get account() -- get transactions() -- new Statement() -- printStatement()
+  - closeAccount(accountName) => removes account
 
 ```
 
@@ -13,7 +14,8 @@ PROPERTIES:
   - accounts (Arr new of BankAccount()) = []
 METHODS:
   - createAccount(accountName) => new BankAccount(accountName)
-  - get account(accountName) => account
+  - deleteAccount(accountName) => deletes account
+  - getAccount(accountName) => account
 ```
 
 ```
@@ -25,21 +27,22 @@ PROPERTIES: (accountName)
 METHODS:
   - makeDeposit(amount) => new Transaction(type) //type = credit
   - makeWithdrawal(amount) => new Transaction(type) //type = debit
-  - get transactions() => accountTransactions Arr
-  - getBalance()
+  - get Transactions() => accountTransactions Arr
+  - get Balance() => account balance
 ```
 
 ```
 class Transaction
 PROPERTIES: (amount, type)
-  - transactionId (Int) = id++
-  - transactionDate (Date())
-  - transactionAmount (Int) = amount
-  - transactionType (String) = type (credit or debit)
+  - #transactionId (Int) = id++
+  - #transactionDate (new Date().toLocaleDateString())
+  - #transactionAmount (Int) = amount
+  - #transactionType (String) = type (credit or debit)
 METHODS:
-  - get transactionId() => transactionId
-  - get transactionDate() => transactionDate
-  - get transactionAmount() => transactionAmount
+  - get Id() => #transactionId
+  - get Date() => #transactionDate
+  - get Amount() => #transactionAmount
+  - get Type() => #transactionType
   - isDebit() => Boolean
 ```
 

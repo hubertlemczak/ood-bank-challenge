@@ -11,6 +11,10 @@ class Bank {
     return account;
   }
 
+  deleteAccount(accountName) {
+    accountName;
+  }
+
   getAccount(accountName) {
     const accountFound = [];
     this.accounts.forEach((account) => {

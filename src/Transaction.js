@@ -1,30 +1,34 @@
 let id = 100;
 class Transaction {
+  #transactionId;
+  #transactionDate;
+  #transactionAmount;
+  #transactionType;
   constructor(amount, type) {
-    this.transactionId = id++;
-    this.transactionDate = new Date().toLocaleString();
-    this.transactionAmount = amount;
-    this.transactionType = type;
+    this.#transactionId = id++;
+    this.#transactionDate = new Date().toLocaleDateString();
+    this.#transactionAmount = amount;
+    this.#transactionType = type;
   }
 
   get Id() {
-    return this.transactionId;
+    return this.#transactionId;
   }
 
   get Date() {
-    return this.transactionDate;
+    return this.#transactionDate;
   }
 
   get Amount() {
-    return this.transactionAmount;
+    return this.#transactionAmount;
   }
 
   get Type() {
-    return this.transactionType;
+    return this.#transactionType;
   }
 
   isDebit() {
-    return this.transactionType === 'debit';
+    return this.Type === 'debit';
   }
 }
 
