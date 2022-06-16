@@ -1,7 +1,7 @@
 # Review
 
-- [x] Have you written a README explaining your approach, perhaps a domain model, instructions to install, run app, run tests, and examples of interactions?
-- [] Did you start with a feature test first?
+- [ ] Have you written a README explaining your approach, perhaps a domain model, instructions to install, run app, run tests, and examples of interactions?
+- [ ] Did you start with a feature test first?
 - [ ] Do all your tests pass? (How do you know?)
 - [ ] Does your program have sufficient test coverage? (How do you know?)
 - [ ] Have you linted your code? (How do you know?)
