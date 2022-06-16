@@ -1,35 +1,53 @@
-```class Bank
-PROPERTIES:
+```
+class BankView
+METHODS:
+  - openAccount(accountName, initialDeposit) => createAccount() -- makeDeposit()
+  - viewAccount(accountName) => get account()
+  - viewAccountStatement(accountName) => get account() -- get transactions() -- new Statement() -- printStatement()
 
-- accounts (Arr new of BankAccount())
-  METHODS:
 ```
 
-- [ ] createAccount()
-- [ ] sd
+```
+class Bank
+PROPERTIES:
+  - accounts (Arr new of BankAccount()) = []
+METHODS:
+  - createAccount(accountName) => new BankAccount(accountName)
+  - get account(accountName) => account
+```
 
+```
 class BankAccount
-PROPERTIES:
-
-- accountId (Int)
-- accountTransactions (Arr of new Transaction())
-  METHODS:
-
+PROPERTIES: (accountName)
+  - accountId (Int) = id++
+  - accountName (String) = accountName
+  - accountTransactions (Arr of new Transaction()) = []
+METHODS:
+  - makeDeposit(amount) => new Transaction(type) //type = credit
+  - makeWithdrawal(amount) => new Transaction(type) //type = debit
+  - get transactions() => accountTransactions Arr
+  - getBalance()
 ```
 
-- [ ] createAccount()
-
 ```
-
 class Transaction
-PROPERTIES:
-
-- transactionId (Int)
-- transactionDate (Date())
-- transactionAmount (Int)
-  METHODS:
-
+PROPERTIES: (amount, type)
+  - transactionId (Int) = id++
+  - transactionDate (Date())
+  - transactionAmount (Int) = amount
+  - transactionType (String) = type (credit or debit)
+METHODS:
+  - get transactionId() => transactionId
+  - get transactionDate() => transactionDate
+  - get transactionAmount() => transactionAmount
+  - isDebit() => Boolean
 ```
 
-- [ ] get transactionDetails() => [ transactionId,transactionDate,transactionAmount ]
+```
+class Statement
+PROPERTIES:
+  - row (String) id, date, credit, debit, balance
+METHODS:
+  - printRow()
+  - printStatement()
 ```

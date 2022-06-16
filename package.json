@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/hubertlemczak/ood-bank-challenge#readme",
   "devDependencies": {
+    "eslint": "^8.17.0",
     "jasmine": "^4.2.0"
   }
 }
