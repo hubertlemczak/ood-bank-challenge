@@ -27,6 +27,10 @@ class Transaction {
     return this.#transactionType;
   }
 
+  get All() {
+    return [this.Date, this.Amount, this.Type];
+  }
+
   isDebit() {
     return this.Type === 'debit';
   }

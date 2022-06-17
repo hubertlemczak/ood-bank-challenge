@@ -1,6 +1,5 @@
 const Bank = require('./Bank');
 const Statement = require('./Statement');
-
 const bank = new Bank();
 
 class BankView {
@@ -15,14 +14,15 @@ class BankView {
   }
 
   viewAccountStatement(accountName) {
-    this.viewAccount(accountName);
+    const account = this.viewAccount(accountName);
+    const transactions = account.Transactions;
     const statement = new Statement();
-    statement.printStatement();
+    return statement.printStatement(transactions);
   }
 
-  closeAccount(accountName) {
-    accountName;
-  }
+  // closeAccount(accountName) {
+  //   accountName;
+  // }
 }
-console.log(new Date().toLocaleDateString());
+
 module.exports = BankView;

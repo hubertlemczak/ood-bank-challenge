@@ -12,15 +12,19 @@ class Bank {
   }
 
   deleteAccount(accountName) {
-    accountName;
+    this.accounts = this.accounts.filter((account) => account.accountName !== accountName);
   }
 
   getAccount(accountName) {
-    const accountFound = [];
+    let accountFound;
     this.accounts.forEach((account) => {
-      if (account.accountName === accountName) accountFound.push(account);
+      if (account.accountName === accountName) accountFound = account;
     });
     return accountFound;
+  }
+
+  get Accounts() {
+    return this.accounts;
   }
 }
 
