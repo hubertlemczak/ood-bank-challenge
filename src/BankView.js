@@ -9,6 +9,10 @@ class BankView {
     return account;
   }
 
+  closeAccount(accountName) {
+    return bank.deleteAccount(accountName);
+  }
+
   viewAccount(accountName) {
     return bank.getAccount(accountName);
   }
@@ -19,10 +23,6 @@ class BankView {
     const statement = new Statement();
     return statement.printStatement(transactions);
   }
-
-  // closeAccount(accountName) {
-  //   accountName;
-  // }
 }
 
 module.exports = BankView;

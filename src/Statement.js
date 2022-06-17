@@ -8,13 +8,15 @@ class Statement {
   printRow(transaction, transactionBalance) {
     let singleRow;
     if (transaction.isDebit()) {
-      singleRow = `${transaction.Date}   ||         || ${transaction.Amount.toFixed(
-        2
-      )}  || ${transactionBalance.toFixed(2)}`;
+      singleRow = `
+      ${transaction.Date}   ||         || ${transaction.Amount.toFixed(2)}  
+      || ${transactionBalance.toFixed(2)}
+      `;
     } else {
-      singleRow = `${transaction.Date}   || ${transaction.Amount.toFixed(2)} ||${' '.repeat(
-        9
-      )}|| ${transactionBalance.toFixed(2)}`;
+      singleRow = `
+      ${transaction.Date}   || ${transaction.Amount.toFixed(2)} ||${' '.repeat(9)}
+      || ${transactionBalance.toFixed(2)}
+      `;
     }
     return singleRow;
   }

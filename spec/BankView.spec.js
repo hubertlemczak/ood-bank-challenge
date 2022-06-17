@@ -12,6 +12,12 @@ describe('BankView', () => {
     expect(result.Transactions[0].Amount).toEqual(200);
     expect(result.Transactions[0].isDebit()).toEqual(false);
   });
+  // Tests for closeAccount()
+  it('successfully closes account', () => {
+    bankView.openAccount('My First Account', 200);
+    const result = bankView.closeAccount('My First Account');
+    expect(result).toEqual([]);
+  });
   // Tests for viewAccount()
   it('successfully makes deposit', () => {
     const expected0 = ['17/06/2022', 200, 'credit'];

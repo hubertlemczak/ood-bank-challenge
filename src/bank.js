@@ -12,7 +12,7 @@ class Bank {
   }
 
   deleteAccount(accountName) {
-    this.accounts = this.accounts.filter((account) => account.accountName !== accountName);
+    return (this.accounts = this.accounts.filter((account) => account.accountName !== accountName));
   }
 
   getAccount(accountName) {
