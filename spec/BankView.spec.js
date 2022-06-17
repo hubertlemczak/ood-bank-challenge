@@ -14,8 +14,8 @@ describe('BankView', () => {
   });
   // Tests for closeAccount()
   it('successfully closes account', () => {
-    bankView.openAccount('My First Account', 200);
-    const result = bankView.closeAccount('My First Account');
+    bankView.openAccount('My Closing Account', 200);
+    const result = bankView.closeAccount('My Closing Account');
     expect(result).toEqual([]);
   });
   // Tests for viewAccount()

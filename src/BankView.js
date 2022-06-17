@@ -1,20 +1,23 @@
 const Bank = require('./Bank');
 const Statement = require('./Statement');
-const bank = new Bank();
 
 class BankView {
+  constructor() {
+    this.bank = new Bank();
+  }
+
   openAccount(accountName, initialDeposit) {
-    const account = bank.createAccount(accountName);
+    const account = this.bank.createAccount(accountName);
     account.makeDeposit(initialDeposit);
     return account;
   }
 
   closeAccount(accountName) {
-    return bank.deleteAccount(accountName);
+    return this.bank.deleteAccount(accountName);
   }
 
   viewAccount(accountName) {
-    return bank.getAccount(accountName);
+    return this.bank.getAccount(accountName);
   }
 
   viewAccountStatement(accountName) {
