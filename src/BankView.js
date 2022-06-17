@@ -1,5 +1,4 @@
 const Bank = require('./Bank');
-const Statement = require('./Statement');
 
 class BankView {
   constructor() {
@@ -22,9 +21,7 @@ class BankView {
 
   viewAccountStatement(accountName) {
     const account = this.viewAccount(accountName);
-    const transactions = account.Transactions;
-    const statement = new Statement();
-    return statement.printStatement(transactions);
+    return account.getStatement();
   }
 }
 

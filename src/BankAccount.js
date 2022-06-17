@@ -1,4 +1,5 @@
 const Transaction = require('./Transaction');
+const Statement = require('./Statement');
 
 let id = 0;
 class BankAccount {
@@ -19,6 +20,12 @@ class BankAccount {
     const transaction = new Transaction(amount, 'debit');
     this.#accountTransactions.push(transaction);
     return transaction;
+  }
+
+  getStatement() {
+    const transactions = this.Transactions;
+    const statement = new Statement();
+    return statement.printStatement(transactions);
   }
 
   get Transactions() {
